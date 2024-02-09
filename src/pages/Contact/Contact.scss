@@ -1,0 +1,39 @@
+@use "../../SASS/Main" as *;
+
+.contact{
+    position: absolute;    
+    @include size(100% , 100%);
+    background-color: var(--bg-color);
+    padding: 10px 0;    
+    transition: 1s;
+    overflow-y: scroll;
+    
+    //tablet screen
+    @include screen(lg){
+            position: relative;  
+            @include size(calc(100% - 105px) , 100%);  
+            margin-top: 10px;   
+            scroll-margin-top: 10px;
+            min-height: 1500px;
+            border-radius: 5px;
+            padding: 15px 10px;
+            overflow-y: visible;   
+        }
+    //mobile screen
+    @include screen(sm){
+            @include size(100%  , 100%);   
+        }
+    }
+
+    .contact  h3 {
+        color: var(--text-color);
+        font-size: 20px;
+        padding: 15px ;
+    & span{
+        color: var(--text-color-letter);
+        background-color: var(--bg-text-letter);
+        padding: 0px 0px 0 8px;
+        @include circle(5px);
+        border: none;
+    }
+    }

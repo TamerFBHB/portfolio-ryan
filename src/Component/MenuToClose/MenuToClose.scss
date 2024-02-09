@@ -1,0 +1,40 @@
+@use '../../SASS/Main' as * ;
+
+%closeBar{
+    content: "";
+    position: absolute;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.bar{
+    position: relative;
+    @include size(30px , 40px);
+    overflow: hidden;
+}
+.content{
+    @extend %closeBar;
+    inset: 29px -10px 8px;
+}
+.bar::after{
+@extend %closeBar;
+inset: 18.5px -10px;
+}
+
+.bar::before{
+    @extend %closeBar;    
+    inset: 8px -10px 29px;
+    z-index: 2;
+}
+.bar:hover .content{
+    display: none;
+}
+.bar:hover::after{
+    transform: rotate(45deg);
+    background-color: red;
+}
+.bar:hover::before{
+    inset: 18.5px -10px;
+    transform: rotate(135deg);
+    background-color: red;
+}

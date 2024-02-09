@@ -1,0 +1,90 @@
+@use "../../SASS/Main" as * ;
+
+
+.Bar{
+    @include size(75px, 90%);
+    margin-top: 4%;
+}
+.sideBar-above{
+    @include size(100% , 25%);
+    background-color: var(--bg-color);
+    @include flex-col(center,center) ;
+    border-radius: 5px;
+}
+.sideBar-above .menu-mode{
+    gap: 5px;
+    @include size(fit-content , fit-content);
+    @include flex-col(center,center) ;
+}
+//###### menubar
+.menubar{
+    @include size(30px , 30px) ;
+    @include flex-col(center,start) ;
+}
+.menubar .one, .two , .three{
+    background-color: var(--text-color);
+    @include size(100% , 2px) ;
+    transition: 0.5s;
+}
+.menubar  .two , .three{
+    height: 2px;
+    margin-top: 6px;
+}
+.menubar:hover .one ,
+.menubar:hover .three{
+    width: 60%;
+}
+.Bar-ryan{
+    display: none;
+}
+.Bar-ryan h1{
+    font-size: 18px;
+    font-weight: 400;
+    color:   var(--text-color);
+}
+.Bar-ryan h6{
+    font-size: 7px;
+    font-weight: 400;
+    color: $green-6;
+}
+
+//sideBar-down
+.sideBar-down{
+    @include size(100% , calc(75% - 8px));
+    padding: 10px 0;
+    margin-top: 8px;
+    background-color:  var(--bg-color);
+    border-radius: 5px;
+}
+.sideBar-down ul{
+    @include size(100% , 100% );
+}
+.sideBar-down ul li {
+    @include size(100% , calc(100% / 5));
+    &:hover a{
+        color :  var(--bg-text-word);
+    }
+}
+.sideBar-down ul li:not(:last-child) {    
+    border-bottom: 1px solid var(--border-color);
+}
+.sideBar-down ul li a{
+    @include flex-col(center , center);
+    gap: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.sideBar-down ul li a .nav-icon{
+    font-size: 18px
+}
+
+
+// screen mobile
+@media (max-width:992px){
+    .Bar{
+        position: fixed; 
+        visibility: hidden;
+    }
+}
+

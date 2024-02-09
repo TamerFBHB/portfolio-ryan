@@ -1,0 +1,353 @@
+  @use '../../SASS/Main' as * ;
+
+
+.about{
+    position: absolute;   
+    @include size(100% , 100%);
+    background-color: var(--bg-color);
+    padding: 10px 0;
+    overflow-y: scroll;    
+    transition: 1s;
+
+}
+
+
+.about  h3 {
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 15px ;
+}
+.about  h3 span{
+    color: var(--text-color-letter);
+    padding: 0px 0px 0 8px;
+    @include circle(5px);
+    background-color: var(--bg-text-letter);
+    border: none;
+}
+.about .about-me .about-information{
+    @include flex(center,start);
+    @include border-top-gradient(1px,transparent,var(--border-color),var(--border-color) );
+}
+.about .about-me .about-information .hello{
+    @include flex-col(start , start);
+    @include size(50% , 100%);
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+    padding: 15px 20px;
+    color: var(--text-color) ;
+}
+.about .about-me .about-information .hello p{
+    line-height: 28px;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: var(--text-color-p);
+}
+.about .about-me .about-information ul{
+    @include size(50% , 100%);
+    padding: 15px 20px;
+}
+.about .about-me .about-information  ul li{
+    @include flex(space-between , center);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px 0;
+    font-size: 20px;
+}
+.about .about-me .about-information  ul li:first-child{
+    padding-top: 0;
+}
+.about .about-me .about-information  ul li:last-child{
+    border: none;
+}
+.about .about-me .about-information ul li h5{
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-color-p);
+}
+.about .about-me .about-information ul li h5:first-child{
+    color: var(--text-color-li);
+    background-color:var(--bg-text-word);
+    padding: 1px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+// ####### section my services
+
+.my-service{
+    @include flex(center , center);
+    flex-wrap: wrap;
+}
+.my-service .row{
+    @include flex(start , start);
+    @include border-top-gradient(1px,transparent,var(--border-color),var(--border-color));
+    padding: 15px 20px;
+    color: var(--text-color) ;
+}
+.my-service .row .box{
+    @include size(50% , 100%);
+    @include flex-col(center , center);
+    padding: 10px;
+}
+.my-service .row .box:first-child{
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+}
+.my-service .row h3{    
+    color: var(--text-color);
+}
+.my-service .row p{
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+// ####### section my pricing
+
+.cards{
+    @include flex(center , center);
+    @include border-top-gradient(1px,transparent,var(--border-color),transparent);
+}
+
+.cards .card-price{
+    @include size(50% , 100%);
+    @include flex-col(center , center);
+    gap: 10px;
+    padding: 10px;
+    @include border-top-gradient(1px,transparent,var(--border-color),transparent);
+    color: var(--text-color);
+}
+.cards .card-price:first-child{    
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+}
+.cards .card-price span{
+    font-size: 14px;
+    margin: 5px;
+    color: var(--text-color-p);
+}
+.cards .card-price span:first-child{
+    vertical-align: middle;
+}
+.cards .card-price p span{
+    color: var(--text-color);
+    background-color: var(--bg-text-letter);
+    padding: 3px 10px;
+    border-radius: 5px
+}
+.cards .card-price .order{
+    @include size(100% , 60px);
+    @include flex(center , center);
+    @include border-top-gradient(1px,transparent,var(--border-color),transparent);
+    color: var(--text-color);
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.5s;
+}
+.cards .card-price .order:hover{
+    color: var(--bg-text-word);
+}
+.cards .card-price .order  .icon-order{
+    @include icon-Bold(50px, var(--text-color));
+    color: var(--bg-text-word);
+    width: 30px;
+    padding-left: 0;
+    font-size: 18px;
+    transition: 0.5s;
+}
+.cards .card-price .order:hover  .icon-order{
+    padding-left: 10px;
+    fill: var(--bg-text-word);
+    stroke: var(--bg-text-word);
+}
+
+//############## section fact
+.fun-fact{
+    @include flex(center,start);
+    @include border-top-gradient(1px,transparent,var(--border-color),var(--border-color));
+}
+.box-fact{
+    @include size(calc(100% / 4) , 150px);
+    @include flex-col(start,center);   
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+    padding: 25px;
+    gap:5px;
+}
+.box-fact:last-child{
+    border-right: none;
+}
+.box-fact p{
+    color: var(--text-color-p);
+    font-size: 80%;
+}
+
+//section quote
+.quote-Ryan{
+    padding: 15px;
+    @include flex-col(center,center);
+    gap: 15px;
+}
+.quote-Ryan div:first-child{
+    @include flex(center,start);
+    @include border-top-gradient(1px,transparent,var(--border-color),var(--border-color));
+    padding: 20px;
+    gap: 10px;
+}
+.quote-Ryan p{
+    font-size: 14px;
+    color:  var(--text-color-p);
+    text-align: center;
+}
+.quote-Ryan .icon-quote{
+    font-size: 50px;
+    color:  var(--text-color-p);
+    height: fit-content;
+}
+.quote-Ryan .icon-quote:last-child{
+    align-self: end;
+}
+
+.quote-Ryan .foto-Rayan{
+    @include flex-col(center,center);
+}
+.quote-Ryan .foto-Rayan img{
+    @include circle(100px);
+    border: none;
+}
+.quote-Ryan .foto-Rayan h4{
+    color: var(--text-color);
+}
+
+ // ########## section client
+.client-card{
+    @include flex(center , center);    
+    @include border-top-gradient(1px,transparent,var(--border-color),transparent);
+    flex-wrap: wrap;
+}
+.box-client{
+    @include size(5% , 50px);
+    @include flex(center , start);
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+    padding: 50px
+}
+.box-client:last-child{
+    border: none;
+}
+.box-client img{
+    @include size(120px , 25px);
+    @include img-gray;
+}
+.box-client:last-child{
+    border-right:none;
+}
+ //SEO text
+    .text-SEO{
+    color: var(--text-color-p);
+    @include border-top-gradient(1px,transparent,var(--border-color),var(--border-color));
+    letter-spacing: 0.4px;
+    font-size: 16px;
+    padding: 30px;
+    text-align: justify;
+ }
+
+
+
+// mobile screen About
+
+@media (max-width: 992px){
+    .about{
+        position: relative;  
+        @include size(calc(100% - 105px) , 100%);   
+        scroll-margin-top: 10px;
+        min-height: 1500px;
+        border-radius: 5px;
+        padding: 15px 10px;
+        overflow-y: visible;   
+    }
+}
+
+
+@media (max-width: 420px){
+    .about{ 
+        @include size(100%  , 100%);  
+    }
+    .about .about-me .about-information{
+        @include size(100% , 100%);
+        flex-wrap: wrap
+    }
+    .about .about-me .about-information .hello{
+        @include size(100% , 100%);
+        padding: 15px ;
+        border-right: none; 
+        text-align: justify;
+    }
+    .about .about-me .about-information .hello p{
+        padding-right: 0px;
+    }
+
+    .about .about-me .about-information .about-inform{
+        @include size(100% , 100%);
+        padding: 15px;
+    }
+    .about .about-me .about-information ul{
+        @include size(100% , 100%);
+    }
+
+    .about .about-me .about-information .about-inform ul li{
+        @include flex(space-between , center);
+        padding: 10px 0;
+    }
+    
+    .my-service .row{
+        @include flex-col(center , start);
+        padding: 15px 10px;
+    }
+    .my-service .row .box{
+        @include size(100% , 100%);
+    }
+    .my-service .row .box:first-child{
+        border-right: none;
+    }
+
+    
+.cards{
+    @include flex-col(center , center);
+}
+.cards .card-price{
+    @include size(100% , 100%);
+}
+.cards .card-price:first-child{
+    border-right: none;
+}
+.cards .card-price:last-child{
+    border-top: none;
+}
+
+.fun-fact{
+    flex-wrap: wrap;
+    }
+.box-fact{
+    @include size(calc(100% / 3) , 150px);   
+}
+.box-fact:last-child,
+.box-fact:nth-child(2){
+    border-right: none;
+}
+
+.client-card{
+    @include flex(center , center);    
+    flex-wrap: wrap;
+}
+.box-client{
+    @include size(15% , 50px);
+    @include flex(center , start);
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+    padding: 50px
+}
+.box-client:last-child,
+.box-client:nth-child(2){
+    border: none;
+}
+
+
+}

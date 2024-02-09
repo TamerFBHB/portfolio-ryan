@@ -1,0 +1,96 @@
+@use "../../SASS//Main" as * ;
+
+
+
+.ProjectPage{
+    position: absolute;   
+    @include size(100% , 100%);
+    background-color: var(--bg-color);
+    padding: 10px 0;
+    transition: 1s;
+    overflow-y: scroll;   
+}
+.my-work .title-work{
+    @include flex(space-between , center);
+    @include border-bottom-gradient(1px,transparent,var(--border-color),transparent);
+
+    @include screen(sm){         
+        flex-wrap: wrap;
+        padding: 0 20px 10px;
+    }
+}
+.my-work h3{
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 15px ;
+    
+}
+
+.my-work h3 span{
+    color: var(--text-color-letter);
+    padding: 0px 0px 0 8px;
+    @include circle(5px);
+    background-color: var(--bg-text-letter);
+    border: none;
+}
+.my-work .title-work ul{
+    @include flex(center,center);
+}
+.my-work .title-work ul li{
+    color: var(--text-color);
+    padding: 0 10px;
+    cursor: pointer;
+}
+.section-work{
+    @include flex-col(start,start);
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
+    height: 1500px;    
+
+    @include screen(sm){ 
+        @include flex(center,start);   
+    }
+}
+
+.section-work .img .foto{
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.section-work .img:Hover .foto{
+    scale: 1.05;
+}
+.section-work .box-img p{
+    color: var(--text-color);
+    @include size(100%, 100%);
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.section-work .box-img:Hover p{
+    color: $teal-5;
+}
+//########## media screen ##########
+@media (max-width: 992px){
+    .ProjectPage{
+        position: relative;  
+        @include size(calc(100% - 105px) , 100%); 
+        margin-top: 10px;   
+        scroll-margin-top: 10px;
+        min-height: 1500px;
+        border-radius: 5px;
+        padding: 15px 10px;
+        overflow-y: visible;    
+    }
+}
+
+
+@media (max-width: 420px){
+    .ProjectPage{
+        @include size(100%  , 100%);   
+        scroll-margin-top: 170px;
+    }
+}

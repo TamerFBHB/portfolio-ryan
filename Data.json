@@ -1,0 +1,51 @@
+
+
+[ {
+    "categoy":"Foto",
+    "image"  : "/work11.jpg",
+    "width"  : "250",
+    "height" : "300",
+    "title"  :"Financial Crisis"
+},
+{
+    "categoy":"content",
+    "image" :  "/work2-1.jpg",
+    "width" : "250",
+    "height" : "180",
+    "title"  :"Fation sale"
+},
+{
+    "categoy":"video",
+    "image" :  "/work2-2.jpg",
+    "width" : "250",
+    "height" : "200",
+    "title"  :"marketing automation strategy"
+},
+{
+    "categoy":"link",
+    "image" : "/work2.jpg" ,
+    "width" : "250",
+    "height" : "300",
+    "title"  :"webinar digital marketing"
+},
+{
+    "categoy":"gallery",
+    "image" :"/work3.jpg",
+    "width" : "250",
+    "height" : "200",
+    "title"  :"instgram stories"
+},
+{
+    "categoy":"gallery",
+    "image" : "/work5.jpg",
+    "width" : "250",
+    "height" : "300",
+    "title"  :"technology human touch"
+},
+{
+    "categoy": "image",
+    "image" :   "/work4.jpg",
+    "width" : "250",
+    "height": "300",
+    "title" :"abstract shape"
+}]

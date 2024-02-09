@@ -1,0 +1,94 @@
+@use "../../SASS/Main" as *;
+
+
+.showPage{
+    @include size(80vw , 100vh);
+    @include flex(start, center);
+    overflow: hidden;
+}
+.informPage{
+    position: relative;
+    @include size(60% , 83vh);
+    @include flex(start, center);
+}
+.homePage{
+    position: relative;
+    @include size(40% , 90vh);
+    @include flex(start, center);
+    z-index: 1000;
+}
+
+// menu bar of certificate
+.barclose{
+    position: absolute;
+    top: 50px;
+    right: 50px ;
+    @include size(25px , 27px) ;
+    @include flex-col(center,start) ;
+    cursor: pointer;
+    z-index: 9500;
+}
+.barclose .sert-one, .barclose .sert-two {
+    background-color: white;
+    @include size(100%, 2px) ;
+}
+.barclose .sert-one{
+    transform: rotate(45deg);
+    margin-top: -2px;
+    margin-left: -2px;
+}
+.barclose  .sert-two {
+    transform: rotate(130deg);
+    margin-top: -1px;    
+    margin-left: -2px;
+}
+
+//################################
+
+//  ##### mobile screen
+@media (max-width: 1000px){
+    .showPage{
+        @include size(100% , 100%);
+        @include flex-col(end, center);
+        border-radius: 5px;    
+    }
+    .homePage{
+        position: relative;
+        @include size(100vw, 900px);
+        @include flex(end, center);
+    }
+    .informPage{
+        position: relative;
+        @include size(80%, 100%);
+        @include flex-col(end, end);
+        margin-top: 30px;
+    }
+
+}
+@media (max-width: 800px){
+    .informPage{
+        position: relative;
+        @include size(75%, 100%);
+        @include flex-col(end, end);
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 420px){
+    .showPage{
+        @include size(100%, 100%);
+        @include flex(start, start);
+        margin: 0;
+    }
+    .homePage{
+        position: relative;
+        @include size(100%,100%);
+        @include flex(start, start);
+    }
+    .informPage{
+        position: relative;
+        @include size(100vw, 100%);
+        @include flex-col(start, end);
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,164 @@
+@use "../../SASS/Main" as * ;
+
+.Bar-mobile{    
+    position: fixed; 
+    visibility: hidden;
+}
+.sideBar-above .icon-close{
+    display: none;
+}
+// screen mobile
+@media (max-width:992px){
+
+.Bar-mobile{
+    visibility: visible;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    @include size(75px , fit-content);
+    margin-top: 30px;
+}
+.sideBar-above{
+    @include size(100% , 120PX);
+    background-color: var(--bg-color);
+    @include flex-col(center,center) ;
+    border-radius: 5px;
+}
+.sideBar-above .menu-mode{
+    gap: 10px;
+    @include size(fit-content , fit-content );
+    @include flex-col(start,center) ;
+}
+//###### menubar
+.menubar{
+    @include size(30px , 30px) ;
+    @include flex-col(center,start) ;
+}
+.menubar .one, .two , .three{
+    background-color: var(--text-color);
+    @include size(100% , 2px) ;
+    transition: 0.5s;
+}
+.menubar  .two , .three{
+    height: 2px;
+    margin-top: 6px;
+}
+.menubar:hover .one ,
+.menubar:hover .three{
+    width: 60%;
+}
+
+
+//sideBar-down
+.sideBar-down{
+    @include size(100% , 430PX);
+    padding: 10px 0;
+    gap: 30px;
+    margin-top: 8px;
+    background-color:  var(--bg-color);
+    border-radius: 5px;
+}
+.sideBar-down ul{
+    @include size(100% , 100% );
+}
+.sideBar-down ul li {
+    @include size(100% , calc(100% / 5));
+    @include flex-col(center , center);
+    &:hover a{
+        color :  var(--bg-text-word);
+    }
+}
+.sideBar-down ul li:not(:last-child) {    
+    border-bottom: 1px solid var(--border-color);
+}
+.sideBar-down ul li a{
+    color : var(--text-color);
+    @include flex-col(center , center);
+    gap: 5px;
+    text-transform: uppercase;    
+    font-size: 14px;
+    transition: 0.3s;
+}
+.sideBar-down ul li a .nav-icon{
+    font-size: 18px
+}
+
+}
+
+
+
+@media (max-width:420px) {
+
+.Bar-mobile{
+    visibility: visible;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    @include size(75px , fit-content);
+    margin-top: 0px;
+    z-index: 500;
+    transition: 0.5s
+
+}
+.sideBar-above{
+    @include size(100% , 120PX);
+    background-color: var(--mobile);
+    border-radius: 5px;
+}
+
+//###### menubar
+.menubar{
+    position: relative;
+    @include size(30px , 30px) ;
+    @include flex-col(center,start) ;
+}
+.menubar .one, .two , .three{
+    display: none;
+}
+
+.sideBar-above .menubar .icon-close{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(100% , 100%);
+    fill: var(--text-color) ;
+}
+
+//sideBar-down
+.sideBar-down{
+    @include size(100% , 430PX);
+    padding: 10px 0;
+    gap: 30px;
+    margin-top: 8px;
+    background-color:  var(--mobile);
+    border-radius: 5px;
+}
+// .sideBar-down ul{
+//     @include size(100% , 100% );
+// }
+// .sideBar-down ul li {
+//     @include size(100% , calc(100% / 6));
+//     &:hover a{
+//         color :  var(--bg-text-word);
+//     }
+// }
+// .sideBar-down ul li:not(:last-child) {    
+//     border-bottom: 1px solid var(--border-color);
+// }
+// .sideBar-down ul li a{
+//     color : var(--text-color);
+//     @include flex-col(center , center);
+//     gap: 5px;
+//     text-transform: uppercase;    
+//     font-size: 14px;
+//     transition: 0.3s;
+// }
+// .sideBar-down ul li a .nav-icon{
+//     font-size: 18px
+// }
+
+// }
+
+}
+

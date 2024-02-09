@@ -1,0 +1,424 @@
+@use "../../SASS/Main" as * ;
+
+
+// to create title 
+%title {
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 15px ;
+    // *** screen mobile ***
+    @include screen(sm){
+        font-size: 20px;
+    }
+}
+%title-span{
+    color: var(--text-color-letter);
+    padding: 0px 0px 0 8px;
+    @include circle(5px);
+    background-color: var(--bg-text-letter);
+    border: none;
+}
+
+.resumes{
+    position: absolute;    
+    @include size(100% , 100%);
+    background-color: var(--bg-color);
+    padding: 10px 0;    
+    overflow-y: scroll;    
+    transition: 1s;
+}
+.resumes  h3 {
+    @extend %title;
+}
+.resumes  h3 span{
+    @extend %title-span;
+}
+.resumes .CV{
+    @include border-top-gradient(1px,var(--border-color),var(--border-color),transparent);
+    @include flex(center , start);
+
+    @include screen(sm){
+        flex-wrap: wrap;
+    }
+}
+.resumes .CV .section:not(:last-child){
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+    @include size(50% , 100%);
+
+    @include screen(sm){
+        @include size(100% , 100%); 
+        border: none;
+        text-align: center;
+    }
+}
+.resumes .CV .section{
+    @include size(50% , 100%);    
+    padding: 0 20px;
+
+    @include screen(sm){
+        @include size(100% , 100%); 
+    }
+}
+
+.resumes .CV .section .title{
+    @include size(100% , 100px);
+    @include flex(start , center);
+    text-transform: uppercase;
+    color: var(--text-color);
+    gap: 5px;
+
+    @include screen(sm){       
+        @include flex(center , center); 
+    }
+}
+.resumes .CV .section .body-section{
+    @include border-top-gradient(1px,var(--border-color),var(--border-color),transparent);
+    @include flex-col(start , start);
+    gap: 3px;
+    padding: 20px 0;
+
+    @include screen(sm){       
+        @include flex(center , center); 
+    }
+}
+.resumes .CV .section .body-section .ink{
+    font-size: 12px;
+    color: var(--text-color);
+}
+.resumes .CV .section .date1{
+    border: 1px solid var(--bg-second-color);
+    @include size(fit-content, 25px);
+    font-size: 15px;
+    padding: 1px  10px;
+}
+.resumes .CV .section .body-section .date1 p{
+    color: var(--bg-text-word);
+}
+.resumes .CV .section .body-section .tradeMark{
+    @include size(100% , fit-content);
+    @include flex(space-between , center);
+}
+.resumes .CV .section .body-section .tradeMark h2,
+.resumes .CV .section .body-section .tradeMark h4{
+    font-size: 20px;
+    text-transform: capitalize;
+    color: var(--text-color);
+}
+.resumes .CV .section .body-section .tradeMark h4{
+    font-size: 16px;
+}
+.resumes .CV .section .body-section .tradeMark span{
+    text-transform: uppercase;
+}
+.resumes .CV .section .body-section .tradeMark  img{
+    @include size(75px , 25px);
+    @include img-gray;
+}
+.resumes .CV .section .body-section p{
+    color: var(--text-color);
+
+    @include screen(sm){         
+        text-align: center;
+    }
+}
+.resumes .CV .section .date{
+    @include size(fit-content, 25px);
+    border: 1px solid  var( --date-color);
+    font-size: 15px;
+    padding: 0  5px;
+}
+.resumes .CV .section .body-section .date p{
+    color: var( --date-color);
+}
+.resumes .CV .section .body-section  .certificate{
+    @include flex(start,center);
+    color: var(--text-color);
+    padding: 0;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.resumes .CV .section .body-section  .certificate:hover {
+    color :var(--bg-text-word);
+}
+
+
+//####### code certificate in mainpage #######
+.bg-certificate{
+    position: fixed;
+    inset: 0 ;
+    @include size(100% , 100%);
+    background-color: #282828eb;
+    z-index: 9000;
+    transition: 1s;
+}
+.bg-certificate img{
+    position: absolute;
+    @include size(50% , 75%);
+    @include center ;
+    z-index: 10000;
+    transition: 0.5s;
+}
+
+//############### skills ###############
+
+.resumes .skill{
+    @include border-top-gradient(1px,var(--border-color),var(--border-color),transparent);
+    @include flex-col(center , start);
+}
+.resumes .skill .part{
+    @include size(100% , 100%);
+    @include flex(center , start);
+    margin-top: 10px;
+
+    @include screen(sm){         
+        flex-wrap: wrap;
+    }
+}
+.resumes .skill .section:not(:last-child){
+    @include border-right-gradient(1px,var(--border-color),var(--border-color),transparent);
+    @include size(50% , 100%);
+
+    @include screen(sm){         
+        @include size(100% , 100%);
+        border: none;
+    }
+}
+.resumes .skill .section{
+    @include size(50% , 100%);    
+    padding: 0 20px;
+
+    @include screen(sm){         
+        @include size(100% , 100%);
+    }
+}
+.resumes .skill .section .title{
+    @include size(100% , 100px);
+    @include flex(start , center);
+    @include border-bottom-gradient(1px,transparent,var(--border-color),var(--border-color));
+    text-transform: uppercase;
+    color: var(--text-color);
+    gap: 5px;
+}
+
+.resumes .skill .section .title .letter-G{
+    position: relative;
+    height: 0;
+    padding: 15px;
+    @include circle(30px);
+    border: none;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    background-color: var(--bg-text-word);
+}
+.resumes .skill .section .title .letter-G>div{
+    font-size: 75px;
+    @include center;
+    transform: translate(-50% , -35%);
+
+}
+.resumes .skill .section .body-section{
+    @include border-top-gradient(1px,var(--border-color),var(--border-color),transparent);
+    @include flex-col(start , start);
+    gap: 3px;
+    padding: 20px 0;
+}
+
+//############### skills SEO ###############
+.evaluation{
+    @include flex-col(center,start);
+    gap: 5px;
+    margin:20px 0;
+}
+.evaluation h2{
+    color: var(--text-color);
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: normal
+}
+.bg-prog{
+    @include size(100%,5px);
+    background-color: var(--bg-prog);
+    border-radius: 2px;
+    margin-bottom: 5px;
+
+    .bg-value{
+        background-color: $cyan-5;
+        border-radius: 2px
+    }
+    .search{
+        @include size(90%,5px);
+    }
+    .Writing{
+        @include size(60%,5px);
+    }
+    .Management{
+        @include size(75%,5px);
+    }
+    .Data{
+        @include size(85%,5px);
+    }
+}
+//############### skills LANGUAGES ###############
+.resumes .skill .section  .bg-circle{
+    @include size(100% , 10px);
+    @include flex(start,center);
+    gap: 15px;
+}
+%bg-brog{
+    @include circle(10px);
+    border: none;
+}
+.resumes .skill .section  .prog-circle{
+    @extend %bg-brog;
+    background-color: var(--bg-second-color);
+}
+.resumes .skill .section .not{
+    background-color: var(--bg-prog);
+}
+//############### skills marketing ###############
+%progress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;    
+    color: var(--text-color);
+}
+.progress{
+    @include flex(start,center);
+    flex-wrap: wrap;
+
+    @include screen(sm){         
+        @include flex(center,center);
+    }
+}
+.progress .par{
+    margin: 20px 15px;
+}
+.detail-par{
+    color: var(--text-color);
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+.progress-bar-social {
+    background: 
+    radial-gradient(closest-side, var(--bg-color ) 79%, transparent 80% 100%),
+    conic-gradient(var(--bg-second-color) 75%, var(--border-color) 0); 
+    @extend %progress;
+}
+
+.progress-bar-google {
+    background: 
+    radial-gradient(closest-side, var(--bg-color ) 79%, transparent 80% 100%),
+    conic-gradient(var(--bg-second-color) 90%, var(--border-color) 0); 
+    @extend %progress;
+    color: var(--text-color);
+}
+.progress-bar-Collaboration{
+    background: 
+    radial-gradient(closest-side, var(--bg-color ) 79%, transparent 80% 100%),
+    conic-gradient(var(--bg-second-color) 85%, var(--border-color) 0); 
+    @extend %progress;
+    color: var(--text-color);
+}
+.progress-bar-Budgeting{
+    background: 
+    radial-gradient(closest-side, var(--bg-color ) 79%, transparent 80% 100%),
+    conic-gradient(var(--bg-second-color) 95%, var(--border-color) 0); 
+    @extend %progress;
+    color: var(--text-color);
+}
+//############### skills KNOWLEDGE ###############
+.resumes .skill ul:last-child{    
+    padding: 15px ;
+}
+.resumes .skill .part  ul li {
+    @include flex(start,center);
+    color: var(--text-color);
+    gap: 10px;
+    padding: 5px 0;
+}
+.resumes .skill  ul li .ico{
+    color: var(--bg-second-color);
+}
+
+//############### Testimonials ###############
+
+// *** swipper ***
+.swiper {
+    @include size(100% , 270px);
+    @include border-top-gradient(1px,transparent,var(--border-color),var(--border-color));
+
+    @include screen(sm){         
+        @include size(100% , 300px);
+    }
+}
+.swiper-slide  {
+    // background-color: var(--bg-color);
+    font-size: 16px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.swiper-slide .rayan-text{
+    @include flex(center,start);
+    padding: 15px 50px ;
+
+    @include screen(sm){         
+        padding: 15px 20px ;
+    }
+}
+.rayan-text .quote{
+    font-size: 25px
+}
+.rayan-text .quote-end{
+    margin-top: 25px;
+    font-size: 25px
+}
+.swiper-slide p{
+    @include size(100% , fit-content);
+    @include flex(center,center);
+    margin: 0 10px ;
+}
+.swiper-slide  .rayan-foto{
+    @include circle(80px);
+    border: none;
+}
+.swiper-slide h4{
+    padding: 5px 20px 0  ;
+    text-transform: capitalize;
+}
+.swiper-slide h5{
+    padding: 0px 20px ;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+
+//############### mobile screen ###############
+@media (max-width:992px) {
+    .resumes{
+        position: relative;  
+        @include size(calc(100% - 105px) , 100%); 
+        margin-top: 10px;   
+        scroll-margin-top: 10px;
+        min-height: 1500px;
+        border-radius: 5px;
+        padding: 15px 10px;
+        overflow-y: visible;  
+    }
+}
+
+@media (max-width: 420px){
+    .resumes{
+        @include size(100%  , 100%);   
+        scroll-margin-top: 170px;
+    }
+}
