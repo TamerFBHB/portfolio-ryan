@@ -28,6 +28,7 @@ const HomePage = ({ setstate, scrollToSection, VAbout, VResume,
                 bar={bar} setBar={setBar}/>
 
             <div className='home'>
+                
                 <div className='menuMobile' onClick={()=>{setBar("apeare")}}>
                     <div className='m-one'></div>
                     <div className='m-two'></div>
