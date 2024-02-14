@@ -42,30 +42,25 @@
     cursor: pointer;
 }
 .section-work{
-    @include flex-col(start,start);
-    gap: 10px;
+    columns: 2;
     padding: 20px;
-    flex-wrap: wrap;
-    height: 1500px;    
-
-    @include screen(sm){ 
-        @include flex(center,start);   
-    }
 }
 
+.box-img{
+    text-align: center;
+    margin: 30px 0;
+}
 .section-work .img .foto{
     transition: 0.5s;
     border-radius: 10px;
 }
-
+n
 .section-work .img:Hover .foto{
     scale: 1.05;
 }
 .section-work .box-img p{
     color: var(--text-color);
-    @include size(100%, 100%);
     text-align: center;
-    padding: 12px 0;
     font-size: 16px;
     font-weight: bold;
     transition: 0.3s;
