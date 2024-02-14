@@ -43,12 +43,13 @@
 }
 .section-work{
     columns: 2;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .box-img{
     text-align: center;
-    margin: 30px 0;
+    margin-bottom: 30px ;
+    break-inside: avoid-column;
 }
 .section-work .img .foto{
     transition: 0.5s;
