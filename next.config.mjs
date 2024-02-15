@@ -5,7 +5,8 @@ const nextConfig = {
             "images.pexels.com",
             "cdn.pixabay.com",
             "i.imgur.com",
-            "ryancv.bslthemes.com"
+            "ryancv.bslthemes.com",
+            "media.istockphoto.com"
         ]
     },
 };
