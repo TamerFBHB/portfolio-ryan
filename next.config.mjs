@@ -6,7 +6,7 @@ const nextConfig = {
             "cdn.pixabay.com",
             "i.imgur.com",
             "ryancv.bslthemes.com",
-            "media.istockphoto.com"
+            "media.istockphoto.com",
         ]
     },
 };
