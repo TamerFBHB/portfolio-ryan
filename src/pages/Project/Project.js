@@ -17,7 +17,13 @@ export default function Project({ state, VProject }) {
 
     async function getAllPosts() {
         try {
-            const { data } = await axios.get("https://api.npoint.io/990610163c1847b499c4");
+            const { data } = await axios.get("https://api.npoint.io/990610163c1847b499c4",
+            {
+                next: {
+                    revalidate: 120,
+                }
+            }
+    );
             setPost(data)
             setArr(data)
         } catch (error) {
