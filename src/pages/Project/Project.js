@@ -37,6 +37,7 @@ export default function Project({ state, VProject }) {
             return item.categoy === myItem;
         })
         setArr(newData)
+        console.log(newData)
     }
 
 
